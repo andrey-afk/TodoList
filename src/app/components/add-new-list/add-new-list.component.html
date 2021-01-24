@@ -1,0 +1,19 @@
+<body>
+  <form class="decor" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+      <h3>{{isAddPage ? 'Add new' : 'Edit'}} </h3>
+      <input type="text" formControlName="title" placeholder="New task">
+      <textarea placeholder="Notes" formControlName="notes" rows="3"></textarea>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="dateTime" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+      </mat-form-field>
+      <input type="submit" [value]="isAddPage ? 'add' : 'edit'">
+    </div>
+  </form>
+</body>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="header">
+    <div class="header-container">
+    <span class="header-container-box1">Your active</span>
+    </div>
+    <div class="header-container2">
+    <span class="header-container-box2">ToDo List</span>
+    </div>
+  </div>
+  <div class="block-with-date">
+    <div class="block-with-date-box">
+    <div class="date" *ngFor="let date of todayDateTime">{{date}}</div>
+      <div class="date" *ngFor="let date of oneDay">{{date}}</div>
+      <div class="date" *ngFor="let date of twoDay">{{date}}</div>
+      <div class="date" *ngFor="let date of threeDay">{{date}}</div>
+      <div class="date" *ngFor="let date of fourDay">{{date}}</div>
+      <div class="date" *ngFor="let date of fiveDay">{{date}}</div>
+      <div class="date" *ngFor="let date of sixDay">{{date}}</div>
+    </div>
+  </div>
+  <div class="section-with-action">
+    <span class="section-with-action-box1" (click)="getAll()" >All</span>
+    <span class="section-with-action-box2"  href="">Complete</span>
+    <span class="section-with-action-box3" href="">Active</span>
+  </div>
+ <app-cards-box (deleteTrigger)="onDelete($event)" (completeTrigger)="onComplete($event)" [data]="todo" *ngFor="let todo of todos"></app-cards-box>
+  <div class="footer">
+    <div class="footer-box">
+      <span routerLink="/add">+</span>
+    </div>
+  </div>
+</div>
+
+
+

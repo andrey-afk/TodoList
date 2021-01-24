@@ -1,0 +1,14 @@
+<div class="container-with-cards">
+  <div id="cards" [ngClass]="{red: change, cards: !change}">
+    <div class="cards-box-header">
+      <div class="box-header">{{data.dateTime}}</div>
+      <div class="box-header" routerLink="/edit/{{data._id}}">Edit</div>
+      <div (click)="onDelete(data._id)">Delete</div>
+    </div>
+    <div class="box-content">
+      <mat-checkbox [formControl]="isCompleted" ngDefaultControl (click)="onChangeColor()" value="" (change)="onComplete(data._id)">Complete</mat-checkbox>
+      <span>{{data.title}}</span>
+    </div>
+    <div class="box-footer">{{data.notes}}</div>
+  </div>
+</div>
